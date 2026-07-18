@@ -3,51 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Ivluen</title>
+    <title>A Love Written</title>
     <style>
-        body { background-color: #f7d1d8; font-family: sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
-        .card { background: #fff; padding: 20px; border-radius: 15px; width: 90%; max-width: 350px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        h2 { font-size: 1.2rem; font-style: italic; color: #555; }
-        
-        /* Music Player Style */
-        .player-bar { width: 100%; height: 5px; background: #ddd; margin: 15px 0; border-radius: 5px; position: relative; }
-        .progress { width: 30%; height: 100%; background: #e91e63; border-radius: 5px; }
-        .play-btn { background: #e91e63; color: white; border: none; padding: 10px 25px; border-radius: 20px; cursor: pointer; font-weight: bold; }
-        
-        img { width: 100%; height: 250px; object-fit: cover; border-radius: 10px; margin-top: 20px; }
-        #message { font-size: 0.95rem; margin: 15px 0; color: #444; line-height: 1.5; min-height: 80px; }
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400&display=swap');
+
+        body {
+            background-color: #fcf8f5;
+            color: #333;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .book-container {
+            width: 90%;
+            max-width: 500px;
+            background: #fff;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            border: 1px solid #eee;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-style: italic;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .date-line {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #aaa;
+            margin-bottom: 40px;
+        }
+
+        .message-body {
+            font-size: 16px;
+            line-height: 1.8;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+
+        .divider {
+            width: 50px;
+            height: 1px;
+            background: #ddd;
+            margin: 0 auto 40px;
+        }
+
+        .footer-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-style: italic;
+            color: #777;
+        }
     </style>
 </head>
 <body>
 
-<div class="card">
-    <h2 id="slide-title">MY LOVE ONE, IVLUEN</h2>
+<div class="book-container">
+    <h1>A love fresh </h1>
+    <div class="date-line">July 18, 2026</div>
     
-    <!-- Music Player Elements -->
-    <div class="player-bar"><div class="progress"></div></div>
-    <button class="play-btn" onclick="nextSlide()">Start</button>
-    
-    <div id="message">You turned every ephemeral moment we share into something that stays forever—your benevolent heart makes even the seconds feel like the sweetest, most lasting of my life.</div>
-    <img id="slide-img" src="img1.jpg" alt="Photo">
+    <div class="message-body">
+        a magical year You gave me new perspectives and fresh definitions of love, 
+
+    <div class="divider"></div>
+
+    <div class="footer-quote">To Love as a Lifelong Lesson.</div>
 </div>
 
-<script>
-    const slides = [
-        { title: "MY LOVE ONE, IVLUEN", text: "You turned every ephemeral moment we share into something that stays forever—your benevolent heart makes even the seconds feel like the sweetest, most lasting of my life.", img: "img1.jpg" },
-        { title: "MY FOREVER LOVE", text: "Love wouldn’t be easy if we weren’t ready for this moment. You inspire me in so many ways just seeing you around I feel alive. My heart is happy, and you’re the reason. You’re indelible. As long you love me this heart is yours forever.", img: "img2.jpg" },
-        { title: "THE LAST PIECE OF MY LIFE", text: "My, i court you, again. Cozette?", img: "img3.jpg" }
-    ];
-    let index = 0;
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Love Written</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400&display=swap');
 
-    function nextSlide() {
-        index = (index + 1) % slides.length;
-        document.getElementById("slide-title").innerText = slides[index].title;
-        document.getElementById("message").innerText = slides[index].text;
-        document.getElementById("slide-img").src = slides[index].img;
-        
-        // Progress bar visual move
-        document.querySelector('.progress').style.width = (index + 1) * 33 + "%";
-    }
-</script>
+        body {
+            background-color: #fcf8f5;
+            color: #333;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .book-container {
+            width: 90%;
+            max-width: 500px;
+            background: #fff;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            border: 1px solid #eee;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-style: italic;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .date-line {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #aaa;
+            margin-bottom: 40px;
+        }
+
+        .message-body {
+            font-size: 16px;
+            line-height: 1.8;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+
+        .divider {
+            width: 50px;
+            height: 1px;
+            background: #ddd;
+            margin: 0 auto 40px;
+        }
+
+        .footer-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-style: italic;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<div class="book-container">
+    <h1>A Love with a fresh definitions</h1>
+    <div class="date-line">July 18, 2026</div>
+    
+    <div class="message-body">
+        you gave me new perspectives and fresh definitions of love
+    <div class="divider"></div>
+
+    <div class="footer-quote"> A fresh love.</div>
+</div>
+
 </body>
 </html>
