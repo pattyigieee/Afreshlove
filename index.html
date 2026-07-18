@@ -5,43 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Booklet</title>
     <style>
-        body, html {
+        body {
             margin: 0;
             padding: 0;
-            width: 100%;
-            height: 100%;
             background-color: #fcf8f5;
-            overflow-y: scroll;
-            /* Ito ang magic para sa booklet-type snap */
-            scroll-snap-type: y mandatory;
-        }
-
-        .page {
-            width: 100%;
-            height: 100vh; /* Bawat image ay sasakop sa buong screen */
             display: flex;
             justify-content: center;
             align-items: center;
-            scroll-snap-align: start;
+            height: 100vh;
+            cursor: pointer; /* Para malaman na clickable */
         }
 
-        .page img {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        .page {
+            display: none; /* Itatago lahat ng pages sa simula */
+            width: 90%;
+            max-width: 500px;
+        }
+
+        .page.active {
+            display: block; /* Ipapakita lang ang active page */
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
     </style>
 </head>
 <body>
 
-    <div class="page">
+    <!-- Page 1 -->
+    <div class="page active" onclick="nextPage()">
         <img src="img1.jpg" alt="Page 1">
     </div>
 
-    <div class="page">
+    <!-- Page 2 -->
+    <div class="page" onclick="nextPage()">
         <img src="img2.jpg" alt="Page 2">
     </div>
 
+    <script>
+        function nextPage() {
+            const pages = document.querySelectorAll('.page');
+            let activeIndex = 0;
+            
+            // Alamin kung anong page ang active ngayon
+            pages.forEach((page, index) => {
+                if (page.classList.contains('active')) {
+                    activeIndex = index;
+                }
+            });
+
+            // I-toggle ang pages
+            pages[activeIndex].classList.remove('active');
+            
+            // Kung nasa dulo na, balik sa simula (loop)
+            const nextIndex = (activeIndex + 1) % pages.length;
+            pages[nextIndex].classList.add('active');
+        }
+    </script>
 </body>
 </html>
