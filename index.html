@@ -13,23 +13,24 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            cursor: pointer; /* Para malaman na clickable */
+            cursor: pointer;
         }
 
         .page {
-            display: none; /* Itatago lahat ng pages sa simula */
+            display: none;
             width: 90%;
             max-width: 500px;
         }
 
         .page.active {
-            display: block; /* Ipapakita lang ang active page */
+            display: block;
         }
 
         img {
             width: 100%;
             height: auto;
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            display: block;
         }
     </style>
 </head>
@@ -45,22 +46,25 @@
         <img src="img2.jpg" alt="Page 2">
     </div>
 
+    <!-- Page 3 -->
+    <div class="page" onclick="nextPage()">
+        <img src="img3.jpg" alt="Page 3">
+    </div>
+
     <script>
         function nextPage() {
             const pages = document.querySelectorAll('.page');
             let activeIndex = 0;
             
-            // Alamin kung anong page ang active ngayon
             pages.forEach((page, index) => {
                 if (page.classList.contains('active')) {
                     activeIndex = index;
                 }
             });
 
-            // I-toggle ang pages
             pages[activeIndex].classList.remove('active');
             
-            // Kung nasa dulo na, balik sa simula (loop)
+            // Lilipat sa susunod, at babalik sa una pagkatapos ng pangatlo
             const nextIndex = (activeIndex + 1) % pages.length;
             pages[nextIndex].classList.add('active');
         }
